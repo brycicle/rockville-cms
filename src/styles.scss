@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+
+$primary: #0075C3;
+$secondary: #0D1216;
+/* Importing Bootstrap SCSS file. */
+@import "/node_modules/bootstrap/scss/bootstrap";
+
+@import "/node_modules/bootstrap/scss/variables";
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+@import url("http://fonts.googleapis.com/css?family=Oswald:400,300,700");
+@import "style.css";
+
+body{
+  font-family: 'Montserrat', sans-serif !important;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+#login {
+  height: 100vh;
+}
+html {
+  height: -webkit-fill-available;
+}
+
+#sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#lot-map-container {
+  height: 90vh !important;
+}
+
+#lot-map {
+  //height: 100%;
+  //width: 100%;
+  //overflow: scroll;
+}

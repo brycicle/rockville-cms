@@ -1,0 +1,88 @@
+<div class="row">
+  <div class="col-xl-8 mt-3" id="lot-map-container">
+    <div class="card shadow border-0" style="height: 100%">
+      <div class="card-header border-0 bg-body">
+        <h5 class="card-title">Lot Map</h5>
+        <p class="card-text">Map Overview</p>
+      </div>
+      <div class="card-body" #lotContainer id="lot-map">
+
+
+
+<!--        <div id="lot-map">-->
+<!--        <canvas #canvas [height]="height" [width]="width"></canvas>-->
+        <canvas #canvas height="{{lotContainer.offsetHeight-50}}" width="{{lotContainer.offsetWidth-50}}" usemap="#workmap" ></canvas>
+<!--        <div *ngIf="mapLoaded">-->
+<!--          <canvas #canvas height="800" width="1000"></canvas>-->
+<!--        </div>-->
+<!--        <canvas #canvas ></canvas>-->
+<!--        </div>-->
+        <map name="workmap">
+          <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+          <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+          <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+        </map>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="col-xl-4 mt-3">
+
+    <div class="card shadow border-0" style="height: 100%">
+      <div class="card-header border-0 bg-body">
+        <div class="row p-0">
+          <div class="col-12">
+            <h5 class="card-title">House Type</h5>
+            <a href="#" class="btn btn-sm btn-outline-primary m-1">Jewel</a>
+            <a href="#" class="btn btn-sm btn-outline-success m-1">Lea</a>
+            <a href="#" class="btn btn-sm btn-outline-warning m-1">Janelle</a>
+            <a href="#" class="btn btn-sm btn-outline-danger m-1">Genevieve</a>
+            <a href="#" class="btn btn-sm btn-outline-secondary m-1">Raizza</a>
+          </div>
+          <div class="col py-3">
+            <h5 class="card-title">Lot Size</h5>
+            <div class="input-group w-100">
+              <input type="number" class="form-control" placeholder="Min">
+              <input type="number" class="form-control" placeholder="Max">
+            </div>
+          </div>
+          <div class="col py-3">
+            <h5 class="card-title">Price</h5>
+            <div class="input-group w-100">
+              <input type="number" class="form-control" placeholder="Min">
+              <input type="number" class="form-control" placeholder="Max">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover table-striped table-bordered text-center align-baseline">
+          <thead>
+            <tr>
+              <th scope="col">Block-Lot</th>
+              <th scope="col">Size</th>
+              <th scope="col">Price</th>
+              <th scope="col">Status</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let lot of lots">
+              <td>{{lot.blockNumber}} - {{lot.lotNumber}} ({{lot.blockNumber.charAt(0)}}{{lot.blockNumber.charAt(lot.blockNumber.length-1)}}{{lot.lotNumber.charAt(0)}}{{lot.lotNumber.charAt(lot.lotNumber.length-1)}})</td>
+              <td>{{lot.size}}m²</td>
+              <td>₱{{lot.size * 6000}}</td>
+              <td>{{lot.status}}</td>
+              <td><a href="#" class="btn w-100 btn-outline-primary">Reserve</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
